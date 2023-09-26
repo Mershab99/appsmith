@@ -43,6 +43,7 @@ import {
 import type { ActionDataState } from "@appsmith/reducers/entityReducers/actionsReducer";
 import { getDatatype } from "utils/AppsmithUtils";
 import { getCurrentEnvironmentId } from "@appsmith/selectors/environmentSelectors";
+import { getDatasourceConnectionMode } from "../../utils";
 
 enum SortingWeights {
   alphabetical = 1,
@@ -151,10 +152,10 @@ export function useDatasource(searchText: string) {
             isValid: isEnvironmentValid(datasource, currentEnvironment),
             pluginPackageName: pluginsPackageNamesMap[datasource.pluginId],
             isSample: false,
-            connectionMode: getEnvironmentConfiguration(
-              datasource,
-              currentEnvironment,
-            )?.connection?.mode,
+            connectionMode: getDatasourceConnectionMode(
+              pluginsPackageNamesMap[datasource.pluginId],
+              getEnvironmentConfiguration(datasource, currentEnvironment),
+            ),
           },
           icon: (
             <ImageWrapper>
