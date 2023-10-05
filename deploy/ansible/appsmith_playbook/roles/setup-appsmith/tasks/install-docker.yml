@@ -1,7 +1,0 @@
-- name: Install Docker
-  include_tasks:
-    file: "{{ ansible_distribution }}-setup-docker.yml"
-    apply:
-      tags: always
-  when: "'docker' not in ansible_facts.packages"
-  tags: always
