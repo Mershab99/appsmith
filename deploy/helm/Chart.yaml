@@ -4,10 +4,6 @@ apiVersion: v2
 name: appsmith
 type: application
 description: Appsmith is an open source framework to build admin panels, CRUD apps and workflows. Build everything you need, 10x faster.
-sources:
-  - https://github.com/mershab99/appsmith
-home: https://www.appsmith.com/
-icon: https://assets.appsmith.com/appsmith-icon.png
 version: 2.0.6
 dependencies:
 - condition: redis.enabled
